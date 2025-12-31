@@ -1,81 +1,44 @@
-# cross-agent-skills
+# cli-agent-skills
 
-Cross‑platform agent skills for AI coding agents
+Cross-platform agent skills and prompts for AI coding assistants.
 
 ## Overview
 
-This repository provides reusable agent skills and templates for various AI coding assistants, including:
+This repository provides reusable skills and templates for multiple agent runtimes:
 
-- **Claude Code** - Anthropic's CLI tool
-- **GitHub Copilot CLI** - GitHub's terminal assistant
-- **Codex CLI** - OpenAI's development tool
-- **Spec Kit** - Specification-driven development workflow
+- Claude Code
+- GitHub Copilot CLI
+- Codex CLI
+- Spec Kit
 
-## Available Skills
+Each skill lives in a small folder with a `SKILL.md` that documents how to run it.
 
-### GitHub Copilot CLI Integration (`.claude/skills/`)
+## Quick start
 
-Use GitHub Copilot CLI from within Claude Code:
+1. Clone the repo:
 
-- **copilot-ask** - Ask questions about code (read-only analysis)
-- **copilot-exec** - Execute development tasks (code modifications)
-- **copilot-review** - Perform code reviews (quality & security)
+   ```bash
+   git clone git@github.com:dceoy/cli-agent-skills.git
+   ```
 
-**Prerequisites:**
+2. Pick a runtime and open a skill's `SKILL.md`:
+   - Claude Code skills: `.claude/skills/`
+   - Codex CLI skills: `.codex/skills/`
 
-- GitHub Copilot subscription
+3. Follow the instructions in that `SKILL.md` to invoke the skill from your agent.
 
-### Codex CLI Integration (`.claude/skills/`)
+## Skills by runtime
 
-Use OpenAI Codex CLI from within Claude Code:
+### Claude Code (in `.claude/skills/`)
 
-- **codex-ask** - Ask questions about code (read-only analysis)
-- **codex-exec** - Execute development tasks (code modifications)
-- **codex-review** - Perform code reviews (quality & security)
+- `copilot-ask`, `copilot-exec`, `copilot-review`
+- `codex-ask`, `codex-exec`, `codex-review`
+- `spec-kit-*` workflow skills
 
-**Prerequisites:**
+### Codex CLI (in `.codex/skills/`)
 
-- ChatGPT Plus/Pro/Team/Enterprise subscription or OpenAI API key
-
-### Spec Kit Workflow (`.claude/skills/`)
-
-Specification-driven development workflow:
-
-- **spec-kit-specify** - Create feature specifications
-- **spec-kit-clarify** - Clarify underspecified areas
-- **spec-kit-plan** - Generate implementation plans
-- **spec-kit-tasks** - Break down into actionable tasks
-- **spec-kit-implement** - Execute implementation
-- **spec-kit-analyze** - Validate consistency
-- **spec-kit-checklist** - Generate quality checklists
-
-## Usage
-
-### From Claude Code
-
-Skills are automatically available in Claude Code. Simply describe your task:
-
-```
-User: "Review this code for security issues"
-→ Claude may launch copilot-review or codex-review skill
-
-User: "Add email validation to the form"
-→ Claude may launch copilot-exec or codex-exec skill
-
-User: "How does authentication work?"
-→ Claude may launch copilot-ask or codex-ask skill
-```
-
-### From Codex CLI
-
-Codex CLI skills are located in `.codex/skills/`:
-
-- **claude-ask** - Ask Claude questions
-- **claude-exec** - Execute tasks with Claude
-- **claude-review** - Review code with Claude
-- **copilot-ask** - Ask GitHub Copilot CLI questions
-- **copilot-exec** - Execute tasks with GitHub Copilot CLI
-- **copilot-review** - Review code with GitHub Copilot CLI
+- `claude-ask`, `claude-exec`, `claude-review`
+- `copilot-ask`, `copilot-exec`, `copilot-review`
 
 ## Structure
 
@@ -85,77 +48,42 @@ Codex CLI skills are located in `.codex/skills/`:
 │   ├── agents/          # Claude Code agent definitions
 │   ├── commands/        # Claude Code command prompts (Spec Kit)
 │   └── skills/          # Claude Code skill definitions
-│       ├── copilot-*/   # GitHub Copilot CLI integration
-│       ├── codex-*/     # Codex CLI integration
-│       └── spec-kit-*/  # Spec Kit workflow
 ├── .codex/
-│   ├── prompts/         # Codex CLI prompts
+│   ├── prompts/         # Codex CLI prompt content (mirrors Spec Kit)
 │   └── skills/          # Codex CLI skill definitions
 ├── .github/
 │   ├── agents/          # GitHub automation agents
 │   ├── prompts/         # GitHub workflow prompts
-│   └── workflows/       # CI/CD workflows
-└── .specify/            # Spec Kit templates
-
+│   └── workflows/       # CI workflows
+└── .specify/            # Spec Kit templates and memory files
 ```
 
-## Installation
+## Prerequisites
 
-1. **Clone the repository:**
+You need the matching CLI tool installed and authenticated before running a skill.
+Refer to each tool's official documentation for installation and login steps.
 
-   ```bash
-   git clone https://github.com/your-org/cross-agent-skills.git
-   ```
+- Claude Code CLI
+- GitHub Copilot CLI
+- Codex CLI
+- Spec Kit
 
-2. **Install desired CLI tools:**
+## Usage notes
 
-   For Claude Code:
+- Skills do not always auto-run; use your agent's skill invocation flow or ask for the skill explicitly.
+- If a skill fails, open its `SKILL.md` and verify prerequisites and command syntax.
+- For Spec Kit, follow the skill sequence described in the `spec-kit-*` skills.
 
-   ```bash
-   brew install claude-code
-   # or
-   npm install -g @anthropic/claude
-   ```
+## Troubleshooting
 
-   For GitHub Copilot CLI:
+- Skill not found: confirm the skill directory exists and the name matches the request.
+- CLI not in PATH: ensure the tool installs into your shell PATH.
+- Auth errors: re-run the tool's login/auth command per its docs.
 
-   ```bash
-   brew install copilot-cli
-   # or
-   npm install -g @githubnext/github-copilot-cli
-   ```
+## Contributing
 
-   For Codex CLI:
-
-   ```bash
-   brew install codex
-   # or
-   npm install -g @openai/codex
-   ```
-
-3. **Authenticate:**
-
-   Claude Code:
-
-   ```bash
-   claude
-   # Follow authentication prompts to login with Anthropic account
-   ```
-
-   GitHub Copilot CLI:
-
-   ```bash
-   copilot
-   # Then run: /login
-   ```
-
-   Codex CLI:
-
-   ```bash
-   codex
-   # Follow authentication prompts
-   ```
+See `AGENTS.md` for repository guidelines and agent-specific rules.
 
 ## License
 
-See [LICENSE](LICENSE) for details.
+See `LICENSE` for details.

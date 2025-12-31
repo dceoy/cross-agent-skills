@@ -1,52 +1,58 @@
-# Repository Guidelines
+# Agent Repository Guidelines
 
-## Project Structure & Module Organization
+Guidelines for editing agent definitions, skills, and prompts in this repository.
 
-- `.claude/agents/` contains Claude Code agent definitions.
-- `.claude/commands/` contains Claude Code command prompts (Spec Kit commands).
-- `.claude/skills/` contains Claude Code skill definitions (copilot-_, codex-_, spec-kit-\*).
-- `.codex/prompts/` mirrors Spec Kit prompt content for Codex CLI usage.
-- `.codex/skills/` contains Codex CLI skill definitions (claude-_ and copilot-_).
-- `.github/agents/` and `.github/prompts/` hold GitHub automation agents/prompts used by workflows.
-- `.github/workflows/ci.yml` runs Claude Code review/bot workflows on PRs.
-- `.specify/` stores Spec Kit templates and memory files.
-- Root files are minimal: `README.md` (overview), `LICENSE`, `AGENTS.md`, and `CLAUDE.md`.
+## Project Structure
 
-## Build, Test, and Development Commands
+- `.claude/agents/` Claude Code agent definitions (see `.claude/agents/README.md`).
+- `.claude/commands/` Claude Code command prompts (Spec Kit commands).
+- `.claude/skills/` Claude Code skill definitions (`copilot-*`, `codex-*`, `spec-kit-*`).
+- `.codex/prompts/` Spec Kit prompt content for Codex CLI usage.
+- `.codex/skills/` Codex CLI skill definitions (`claude-*`, `copilot-*`).
+- `.github/agents/` and `.github/prompts/` GitHub automation agents/prompts.
+- `.github/workflows/ci.yml` CI workflows (Claude review/bot runs on PRs).
+- `.specify/` Spec Kit templates and memory files.
+- `.serena/` Serena MCP memories and project configuration.
+- Root docs: `README.md` (overview), `LICENSE`, `AGENTS.md`, and `CLAUDE.md`.
 
-- There is no build system or runtime in this repo; changes are mostly Markdown/YAML content.
-- Validate changes by reviewing diffs (`git diff`) and ensuring files render correctly in Markdown.
-- CI is GitHub Actions only (`.github/workflows/ci.yml`) and runs Claude Code review/bot workflows on PRs.
+## Canonical Files
 
-## Coding Style & Naming Conventions
+- `CLAUDE.md` is a symlink to `AGENTS.md`. Edit `AGENTS.md` only.
 
-- Use Markdown for docs and prompts; prefer short headings and fenced code blocks for examples.
-- Keep filenames in kebab-case, matching existing patterns like `codex-ask.md` and `speckit.plan.md`.
-- YAML files use 2-space indentation (see `.github/workflows/ci.yml`).
-- Keep instructions concise and task-focused; avoid long prose in agent/prompt files.
+## Prerequisites
 
-## Testing Guidelines
+Install and authenticate the required CLI tools before running skills. See `README.md` for the current prerequisites and links.
 
-- No automated test framework is configured.
-- If you introduce scripts or tests, add a short “How to run” note in `README.md` and update this guide.
+## Coding Style & Naming
 
-## Commit & Pull Request Guidelines
+- Use Markdown for docs and prompts; keep headings short.
+- Prefer fenced code blocks for examples.
+- Keep filenames in kebab-case (e.g., `codex-ask.md`, `speckit.plan.md`).
+- YAML uses 2-space indentation (see `.github/workflows/ci.yml`).
+- Keep instructions concise and task-focused.
 
-- Commit messages follow short, imperative summaries (e.g., “Add …”, “Install …”).
-- PRs should include a clear description of the change and rationale.
-- If you add or rename agents/prompts, update any related listings (for example, `.claude/agents/README.md`) to keep references in sync.
-- Avoid tagging automation users unnecessarily; the CI workflow reacts to PR events and `@claude` mentions.
+## Validation
+
+- Review diffs with `git diff`.
+- Check that Markdown renders cleanly.
+- When adding/renaming agents or prompts, update any local indexes or READMEs that list them (for example, `.claude/agents/README.md`).
+
+## Commit & PR Guidelines
+
+- Commit messages use short, imperative summaries (e.g., "Add …", "Update …").
+- PRs should describe the change and rationale.
+- Avoid tagging automation users unless needed; CI reacts to PR events and `@claude` mentions.
 
 ## Agent-Specific Notes
 
 - Agent and prompt files are the product of this repo—treat them as source of truth.
-- Prefer small, focused edits per file to keep reviewable diffs and predictable behavior.
+- Prefer small, focused edits per file for reviewability.
 
 ## Serena MCP Usage (Prioritize When Available)
 
-- **If Serena MCP is available, use it first.** Treat Serena MCP tools as the primary interface over local commands or ad-hoc scripts.
-- **Glance at the Serena MCP docs/help before calling a tool** to confirm tool names, required args, and limits.
-- **Use the MCP-exposed tools for supported actions** (e.g., reading/writing files, running tasks, fetching data) instead of re-implementing workflows.
-- **Never hardcode secrets.** Reference environment variables or the MCP's configured credential store; avoid printing tokens or sensitive paths.
-- **If Serena MCP isn't enabled or lacks a needed capability, say so and propose a safe fallback.** Mention enabling it via `.mcp.json` when relevant.
-- **Be explicit and reproducible.** Name the exact MCP tool and arguments you intend to use in your steps.
+- Use Serena MCP tools first when available.
+- Check Serena MCP docs/help before calling a tool to confirm names and arguments.
+- Use MCP-exposed tools for reading/writing files and fetching data.
+- Never hardcode secrets; rely on environment variables or MCP credentials.
+- If Serena MCP is unavailable or missing a capability, state it and propose a safe fallback.
+- Be explicit and reproducible when describing tool usage.
