@@ -95,5 +95,5 @@ After clarification:
 
 ## See Also
 
-- **[SPEC-KIT-WORKFLOW.md](../../../SPEC-KIT-WORKFLOW.md)** - Complete Spec-Driven Development workflow guide
-- **[Phase 3: Clarify Ambiguities](../../../SPEC-KIT-WORKFLOW.md#phase-3-clarify-ambiguities-speckitclarify-optional)** - Detailed clarification guide
+- `speckit-specify` - Create feature specifications
+- `speckit-plan` - Create technical implementation strategy

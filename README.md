@@ -25,7 +25,7 @@ This repository implements the **Spec-Driven Development** methodology via Spec 
 6. **Tasks** → Generate ordered work items
 7. **Implement** → Execute development
 
-See **[SPEC-KIT-WORKFLOW.md](./SPEC-KIT-WORKFLOW.md)** for the complete workflow guide with examples and best practices.
+See **[AGENTS.md](./AGENTS.md#spec-kit-workflow)** for the complete workflow guide with examples and best practices.
 
 ## Quick start
 
@@ -87,7 +87,7 @@ Refer to each tool's official documentation for installation and login steps.
 
 - Skills do not always auto-run; use your agent's skill invocation flow or ask for the skill explicitly.
 - If a skill fails, open its `SKILL.md` and verify prerequisites and command syntax.
-- For Spec Kit workflows, see [SPEC-KIT-WORKFLOW.md](./SPEC-KIT-WORKFLOW.md) for the canonical command sequence and usage guide.
+- For Spec Kit workflows, see [AGENTS.md](./AGENTS.md#spec-kit-workflow) for the canonical command sequence and usage guide.
 
 ### Quick Spec Kit Example
 

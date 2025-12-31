@@ -127,5 +127,5 @@ After creating issues:
 
 ## See Also
 
-- **[SPEC-KIT-WORKFLOW.md](../../../SPEC-KIT-WORKFLOW.md)** - Complete Spec-Driven Development workflow guide
-- **[Additional Commands](../../../SPEC-KIT-WORKFLOW.md#additional-commands)** - Project management integration tools
+- `speckit-tasks` - Break plan into actionable tasks
+- `speckit-implement` - Execute implementation plan

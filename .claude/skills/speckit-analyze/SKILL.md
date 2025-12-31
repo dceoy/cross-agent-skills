@@ -81,5 +81,6 @@ After analysis:
 
 ## See Also
 
-- **[SPEC-KIT-WORKFLOW.md](../../../SPEC-KIT-WORKFLOW.md)** - Complete Spec-Driven Development workflow guide
-- **[Phase 5: Validate Consistency](../../../SPEC-KIT-WORKFLOW.md#phase-5-validate-consistency-speckitanalyze-optional)** - Detailed analysis guide
+- `speckit-plan` - Create technical implementation strategy
+- `speckit-tasks` - Break plan into actionable tasks
+- `speckit-implement` - Execute implementation plan

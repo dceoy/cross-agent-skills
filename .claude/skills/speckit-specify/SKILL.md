@@ -70,5 +70,6 @@ After creating spec.md:
 
 ## See Also
 
-- **[SPEC-KIT-WORKFLOW.md](../../../SPEC-KIT-WORKFLOW.md)** - Complete Spec-Driven Development workflow guide
-- **[Phase 2: Specify Requirements](../../../SPEC-KIT-WORKFLOW.md#phase-2-specify-requirements-speckitspecify)** - Detailed specification guide
+- `speckit-constitution` - Define project principles
+- `speckit-clarify` - Resolve specification ambiguities
+- `speckit-plan` - Create technical implementation strategy

@@ -101,5 +101,6 @@ After creating checklist:
 
 ## See Also
 
-- **[SPEC-KIT-WORKFLOW.md](../../../SPEC-KIT-WORKFLOW.md)** - Complete Spec-Driven Development workflow guide
-- **[Additional Commands](../../../SPEC-KIT-WORKFLOW.md#additional-commands)** - Quality assurance tools
+- `speckit-specify` - Create feature specifications
+- `speckit-plan` - Create technical implementation strategy
+- `speckit-implement` - Execute implementation plan

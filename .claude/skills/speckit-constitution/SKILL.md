@@ -85,5 +85,5 @@ After creating/updating constitution:
 
 ## See Also
 
-- **[SPEC-KIT-WORKFLOW.md](../../../SPEC-KIT-WORKFLOW.md)** - Complete Spec-Driven Development workflow guide
-- **[Phase 1: Establish Principles](../../../SPEC-KIT-WORKFLOW.md#phase-1-establish-principles-speckitconstitution)** - Detailed constitution guide
+- `speckit-specify` - Create feature specifications
+- `speckit-plan` - Build implementation plans

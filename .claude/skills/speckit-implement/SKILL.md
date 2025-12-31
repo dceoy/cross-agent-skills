@@ -73,5 +73,6 @@ After implementation:
 
 ## See Also
 
-- **[SPEC-KIT-WORKFLOW.md](../../../SPEC-KIT-WORKFLOW.md)** - Complete Spec-Driven Development workflow guide
-- **[Phase 7: Execute Implementation](../../../SPEC-KIT-WORKFLOW.md#phase-7-execute-implementation-speckitimplement)** - Detailed implementation guide
+- `speckit-tasks` - Break plan into actionable tasks
+- `speckit-checklist` - Generate custom validation checklists
+- `speckit-analyze` - Validate cross-artifact consistency

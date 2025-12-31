@@ -73,5 +73,7 @@ After creating tasks.md:
 
 ## See Also
 
-- **[SPEC-KIT-WORKFLOW.md](../../../SPEC-KIT-WORKFLOW.md)** - Complete Spec-Driven Development workflow guide
-- **[Phase 6: Generate Tasks](../../../SPEC-KIT-WORKFLOW.md#phase-6-generate-tasks-speckittasks)** - Detailed task generation guide
+- `speckit-plan` - Create technical implementation strategy
+- `speckit-analyze` - Validate cross-artifact consistency
+- `speckit-implement` - Execute implementation plan
+- `speckit-taskstoissues` - Convert tasks to GitHub issues
