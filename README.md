@@ -8,9 +8,8 @@ This repository provides reusable skills and templates for multiple agent runtim
 
 - **Claude Code** - Skills in `.claude/skills/`, agents in `.claude/agents/`, commands in `.claude/commands/`
 - **Codex CLI** - Skills in `.codex/skills/` (claude-\*), prompts in `.codex/prompts/`
-- **GitHub Copilot CLI** - Via symlinks in `.codex/skills/` and `.github/skills/`
+- **GitHub Copilot CLI** - Agent files in `.github/agents/`, prompt files in `.github/prompts/`, skills in `.github/skills/` (symlinks)
 - **Gemini CLI** - Skills in `.claude/skills/` (gemini-\*), commands in `.gemini/commands/`
-- **GitHub Actions** - Agent files in `.github/agents/`, prompt files in `.github/prompts/`, skills in `.github/skills/`
 - **Spec Kit** - Spec-Driven Development workflow skills (`speckit-*`) across all runtimes
 
 Each skill directory contains a `skill.yaml` configuration and `SKILL.md` documentation.
@@ -41,7 +40,7 @@ See **[AGENTS.md](./AGENTS.md#spec-kit-workflow)** for the complete workflow gui
    - **Claude Code:** `.claude/skills/` (skill directories), `.claude/agents/` (agent definitions), `.claude/commands/` (command prompts)
    - **Codex CLI:** `.codex/skills/` (skill directories), `.codex/prompts/` (prompt files)
    - **Gemini CLI:** `.gemini/commands/` (prompt files)
-   - **GitHub Actions:** `.github/agents/`, `.github/prompts/`, `.github/skills/`
+   - **GitHub Copilot CLI:** `.github/agents/`, `.github/prompts/`, `.github/skills/`
 
 3. Open a skill directory and read the `SKILL.md` to learn how to invoke it.
 
@@ -78,15 +77,15 @@ See **[AGENTS.md](./AGENTS.md#spec-kit-workflow)** for the complete workflow gui
 
 - `speckit.*.md` - Prompt files for Spec Kit workflow
 
-### GitHub Actions
+### GitHub Copilot CLI
 
 **Agents** (`.github/agents/`)
 
-- `speckit.*.agent.md` - Agent definitions for GitHub automation
+- `speckit.*.agent.md` - Agent definitions for Copilot CLI
 
 **Prompts** (`.github/prompts/`)
 
-- `speckit.*.prompt.md` - Prompt files for GitHub automation
+- `speckit.*.prompt.md` - Prompt files for Copilot CLI
 
 **Skills** (`.github/skills/`)
 
@@ -112,9 +111,9 @@ See **[AGENTS.md](./AGENTS.md#spec-kit-workflow)** for the complete workflow gui
 ├── .gemini/
 │   └── commands/        # Gemini CLI prompt files (speckit.*.toml)
 ├── .github/
-│   ├── agents/          # GitHub automation agents (speckit.*.agent.md)
-│   ├── prompts/         # GitHub workflow prompts (speckit.*.prompt.md)
-│   ├── skills/          # GitHub skills (symlinks to .claude and .codex)
+│   ├── agents/          # GitHub Copilot CLI agents (speckit.*.agent.md)
+│   ├── prompts/         # GitHub Copilot CLI prompts (speckit.*.prompt.md)
+│   ├── skills/          # GitHub Copilot CLI skills (symlinks to .claude and .codex)
 │   └── workflows/       # CI workflows (ci.yml)
 ├── .serena/             # Serena MCP memories, cache, and project config
 │   ├── cache/

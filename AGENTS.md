@@ -19,10 +19,10 @@ Guidelines for editing agent definitions, skills, and prompts in this repository
 
 - `.gemini/commands/` - Command prompt files for Spec Kit workflow (speckit.\*.toml)
 
-### GitHub Actions Runtime (`.github/`)
+### GitHub Copilot CLI Runtime (`.github/`)
 
-- `.github/agents/` - Agent definitions for GitHub automation (speckit.\*.agent.md)
-- `.github/prompts/` - Prompt files for GitHub workflows (speckit.\*.prompt.md)
+- `.github/agents/` - Agent definitions for Copilot CLI (speckit.\*.agent.md)
+- `.github/prompts/` - Prompt files for Copilot CLI (speckit.\*.prompt.md)
 - `.github/skills/` - Symlinks to both .claude/skills/ and .codex/skills/
 - `.github/workflows/` - CI workflow definitions (ci.yml)
 
