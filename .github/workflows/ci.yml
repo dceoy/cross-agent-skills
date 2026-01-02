@@ -102,6 +102,9 @@ jobs:
         uses: actions/setup-node@395ad3262231945c25e8478fd5baf05154b1d79f  # v6.1.0
         with:
           node-version: latest
+      - name: Install coding agents
+        run: >
+          npm install -g @anthropic-ai/claude-code @openai/codex @google/gemini-cli @github/copilot
       - name: Install Specify CLI
         run: >
           uv tool install specify-cli --from git+https://github.com/github/spec-kit.git
