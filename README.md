@@ -115,10 +115,6 @@ See **[AGENTS.md](./AGENTS.md#spec-kit-workflow)** for the complete workflow gui
 │   ├── prompts/         # GitHub Copilot CLI prompts (speckit.*.prompt.md)
 │   ├── skills/          # GitHub Copilot CLI skills (symlinks to .claude and .codex)
 │   └── workflows/       # CI workflows (ci.yml)
-├── .serena/             # Serena MCP memories, cache, and project config
-│   ├── cache/
-│   ├── memories/
-│   └── project.yml
 └── .specify/            # Spec Kit templates and memory files
     ├── memory/
     ├── scripts/

@@ -32,12 +32,6 @@ Guidelines for editing agent definitions, skills, and prompts in this repository
 - `.specify/memory/` - Constitution and other persistent memory
 - `.specify/scripts/` - Helper scripts
 
-### Serena MCP (`.serena/`)
-
-- `.serena/memories/` - MCP memory files
-- `.serena/cache/` - MCP cache
-- `.serena/project.yml` - Project configuration
-
 ### Root Documentation
 
 - `README.md` - Repository overview and quick start
@@ -134,15 +128,6 @@ This repository uses symlinks to share skills across runtimes:
 
 - Agent and prompt files are the product of this repo—treat them as source of truth.
 - Prefer small, focused edits per file for reviewability.
-
-## Serena MCP Usage (Prioritize When Available)
-
-- Use Serena MCP tools first when available.
-- Check Serena MCP docs/help before calling a tool to confirm names and arguments.
-- Use MCP-exposed tools for reading/writing files and fetching data.
-- Never hardcode secrets; rely on environment variables or MCP credentials.
-- If Serena MCP is unavailable or missing a capability, state it and propose a safe fallback.
-- Be explicit and reproducible when describing tool usage.
 
 ## Codex CLI Agents
 
