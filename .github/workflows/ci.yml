@@ -22,6 +22,15 @@ on:
   pull_request_review:
     types:
       - submitted
+  workflow_dispatch:
+    inputs:
+      workflow:
+        required: true
+        type: choice
+        options:
+          - update
+        description: Choose the workflow to run
+        default: update
 jobs:
   claude-code-review:
     if: >
@@ -68,3 +77,49 @@ jobs:
       unconditional: true
     secrets:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  update-speckit:
+    if: >
+      github.event_name == 'workflow_dispatch' && inputs.workflow == 'update'
+    permissions:
+      contents: write
+      pull-requests: write
+    defaults:
+      run:
+        shell: bash -euo pipefail {0}
+        working-directory: .
+    runs-on: ubuntu-slim
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8  # v6.0.1
+        with:
+          ref: ${{ github.head_ref || github.ref_name }}
+          persist-credentials: true
+      - name: Set up uv
+        uses: astral-sh/setup-uv@681c641aba71e4a1c380be3ab5e12ad51f415867  # v7.1.6
+        with:
+          version: latest
+      - name: Setup Node.js
+        uses: actions/setup-node@395ad3262231945c25e8478fd5baf05154b1d79f  # v6.1.0
+        with:
+          node-version: latest
+      - name: Install Specify CLI
+        run: >
+          uv tool install specify-cli --from git+https://github.com/github/spec-kit.git
+      - name: Update Spec Kit
+        run: >
+          echo 'claude codex gemini copilot'
+          | tr ' ' '\n'
+          | xargs -L1 -t specify init --force --here --ai
+      - name: Prettify output files
+        run: >
+          npx prettier --write .*/**/*.{md,json}
+      - name: Check installed tools
+        run: >
+          specify check
+      - name: Commit and push the changes
+        uses: EndBug/add-and-commit@a94899bca583c204427a224a7af87c02f9b325d5  # v9.1.4
+        with:
+          add: ./README.md
+          message: Update README.md
+          push: true
+          github_token: ${{ secrets.GITHUB_TOKEN }}
