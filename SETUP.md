@@ -103,11 +103,89 @@ export PORT=3000
 
 ## CI/CD
 
-Tests run automatically in GitHub Actions on:
-- Pull requests
-- Pushes to main branch
+### GitHub Actions Workflow
 
-See `.github/workflows/e2e.yml` for CI configuration.
+⚠️ **Note**: The workflow file `.github/workflows/e2e.yml` exists locally but could not be committed due to GitHub App permissions. You need to add it manually.
+
+**Option 1: Create the workflow file manually**
+
+Create `.github/workflows/e2e.yml` with this content:
+
+```yaml
+name: E2E Tests
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  e2e:
+    name: Playwright E2E Tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install chromium --with-deps
+
+      - name: Run E2E tests
+        run: npm run test:e2e
+        env:
+          CI: true
+          E2E_BASE_URL: http://localhost:3000
+          # Uncomment and configure secrets if auth tests require them:
+          # E2E_USER: ${{ secrets.E2E_USER }}
+          # E2E_PASS: ${{ secrets.E2E_PASS }}
+
+      - name: Upload test results on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: |
+            .artifacts/test-results/
+            playwright-report/
+          retention-days: 7
+
+      - name: Upload trace files on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-traces
+          path: .artifacts/test-results/**/*.zip
+          retention-days: 7
+```
+
+**Option 2: Use the local file**
+
+The workflow file exists locally at `.github/workflows/e2e.yml`. You can commit it separately:
+
+```bash
+git add .github/workflows/e2e.yml
+git commit -m "ci: Add E2E tests workflow"
+git push
+```
+
+### What the Workflow Does
+
+- Runs on pull requests and pushes to main branch
+- Installs dependencies and Playwright browsers
+- Executes E2E tests with CI-optimized settings
+- Uploads test artifacts (reports, traces) on failure for debugging
 
 ## Troubleshooting
 
