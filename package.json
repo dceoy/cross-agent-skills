@@ -1,0 +1,31 @@
+{
+  "name": "ai-coding-agent-skills",
+  "version": "1.0.0",
+  "description": "Agent skills for AI coders - includes demo web app for E2E testing",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node demo-app/server.js",
+    "start": "node demo-app/server.js",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "test:e2e:debug": "playwright test --debug",
+    "test:e2e:headed": "playwright test --headed"
+  },
+  "keywords": [
+    "ai",
+    "agent",
+    "skills",
+    "playwright",
+    "e2e",
+    "testing"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.49.0"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

@@ -1,1 +1,21 @@
 .serena
+
+# Dependencies
+node_modules/
+package-lock.json
+
+# E2E test artifacts
+.artifacts/
+playwright-report/
+test-results/
+
+# Playwright browsers cache
+.cache/
+
+# Environment variables (never commit secrets)
+.env
+.env.local
+
+# OS
+.DS_Store
+Thumbs.db

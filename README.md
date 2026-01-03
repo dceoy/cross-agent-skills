@@ -44,6 +44,27 @@ See **[AGENTS.md](./AGENTS.md#spec-kit-workflow)** for the complete workflow gui
 
 3. Open a skill directory and read the `SKILL.md` to learn how to invoke it.
 
+## Demo Web App
+
+This repository includes a demo Express web application for testing the `playwright-e2e` skill:
+
+```bash
+# Install dependencies
+npm install
+
+# Start demo app
+npm run dev
+
+# Run E2E tests
+npm run test:e2e
+```
+
+Access the demo app at http://localhost:3000
+
+**Test credentials**: `demo` / `password123`
+
+See [e2e/README.md](./e2e/README.md) for detailed testing documentation.
+
 ## Skills by runtime
 
 ### Claude Code
@@ -53,6 +74,7 @@ See **[AGENTS.md](./AGENTS.md#spec-kit-workflow)** for the complete workflow gui
 - `copilot-ask`, `copilot-exec`, `copilot-review`, `copilot-search` - GitHub Copilot CLI integration
 - `codex-ask`, `codex-exec`, `codex-review`, `codex-search` - OpenAI Codex CLI integration
 - `gemini-ask`, `gemini-exec`, `gemini-review`, `gemini-search` - Gemini CLI integration
+- `playwright-e2e` - E2E testing with Playwright Test + Playwright MCP
 - `speckit-analyze`, `speckit-checklist`, `speckit-clarify`, `speckit-constitution`, `speckit-implement`, `speckit-plan`, `speckit-specify`, `speckit-tasks`, `speckit-taskstoissues` - Spec Kit workflow
 
 **Agents** (`.claude/agents/`)
