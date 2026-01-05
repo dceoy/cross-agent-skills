@@ -279,3 +279,87 @@ Specialized Claude Code agents that integrate Gemini CLI capabilities for autono
 .claude/agents/
 └── gemini.md  # Unified Gemini agent (ask, exec, review, search modes)
 ```
+
+## GitHub CLI Skills
+
+Skills for GitHub CLI (`gh`) operations on issues and pull requests. These are standalone skills (not agents) that provide guided workflows for common GitHub operations.
+
+### Pull Request Skills
+
+| Skill | Description |
+|-------|-------------|
+| `gh-pr-list` | List and filter PRs by state, author, labels, search query |
+| `gh-pr-view` | View PR details, comments, and JSON fields |
+| `gh-pr-create` | Create PRs with title, body, reviewers, labels, projects |
+| `gh-pr-edit` | Edit PR metadata (title, body, labels, reviewers, assignees) |
+| `gh-pr-merge` | Merge PRs with merge, squash, or rebase strategies |
+| `gh-pr-close` | Close PRs without merging, optionally delete branch |
+| `gh-pr-ready` | Mark PR as ready for review or convert back to draft |
+| `gh-pr-review` | Submit reviews (approve, comment, request changes) |
+| `gh-pr-checks` | View CI/CD check status, watch until completion |
+| `gh-pr-diff` | View PR code changes, file list, or patch format |
+| `gh-pr-checkout` | Check out a PR locally for testing or review |
+| `gh-pr-comment` | Add, edit, or delete PR comments |
+
+### Issue Skills
+
+| Skill | Description |
+|-------|-------------|
+| `gh-issue-list` | List and filter issues by state, author, labels, milestone |
+| `gh-issue-view` | View issue details, comments, and JSON fields |
+| `gh-issue-create` | Create issues with title, body, labels, assignees, projects |
+| `gh-issue-edit` | Edit issue metadata (title, body, labels, assignees) |
+| `gh-issue-close` | Close issues as completed or not planned |
+| `gh-issue-reopen` | Reopen closed issues with optional comment |
+| `gh-issue-comment` | Add, edit, or delete issue comments |
+| `gh-issue-develop` | Create or list branches linked to an issue |
+
+### Prerequisites
+
+- GitHub CLI (`gh`) installed and available in PATH
+- Authenticated via `gh auth login`
+- Repository access (read for view/list, write for create/edit/merge)
+
+### Usage
+
+Skills are invoked automatically when you describe a GitHub operation:
+
+```
+"List my open PRs"
+→ Uses gh-pr-list skill
+
+"Create an issue for this bug"
+→ Uses gh-issue-create skill
+
+"What's the CI status on PR #123?"
+→ Uses gh-pr-checks skill
+
+"Close issue #45 as not planned"
+→ Uses gh-issue-close skill
+```
+
+### Skill Files
+
+```
+skills/
+├── gh-pr-list/SKILL.md
+├── gh-pr-view/SKILL.md
+├── gh-pr-create/SKILL.md
+├── gh-pr-edit/SKILL.md
+├── gh-pr-merge/SKILL.md
+├── gh-pr-close/SKILL.md
+├── gh-pr-ready/SKILL.md
+├── gh-pr-review/SKILL.md
+├── gh-pr-checks/SKILL.md
+├── gh-pr-diff/SKILL.md
+├── gh-pr-checkout/SKILL.md
+├── gh-pr-comment/SKILL.md
+├── gh-issue-list/SKILL.md
+├── gh-issue-view/SKILL.md
+├── gh-issue-create/SKILL.md
+├── gh-issue-edit/SKILL.md
+├── gh-issue-close/SKILL.md
+├── gh-issue-reopen/SKILL.md
+├── gh-issue-comment/SKILL.md
+└── gh-issue-develop/SKILL.md
+```
