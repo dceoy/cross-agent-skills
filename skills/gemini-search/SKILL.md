@@ -72,8 +72,7 @@ Include:
 7. Source URLs for all information
 
 Search context:
-- Current year: 2026
-- Looking for latest/current information
+- Focus on latest/current information
 - Prefer official documentation over third-party sources
 - Include security considerations if relevant
 
@@ -148,7 +147,7 @@ Last verified: [Current date]
 ### Documentation Lookup
 
 ```bash
-gemini --sandbox -p "Find official documentation for React Server Components in 2026:
+gemini --sandbox -p "Find the latest official documentation for React Server Components:
 - Installation and setup
 - Core concepts and API
 - Common use cases and examples
@@ -161,7 +160,7 @@ Use Google Search to find current official documentation."
 ### Library Comparison
 
 ```bash
-gemini --sandbox -p "Compare Prisma vs Drizzle vs Kysely for TypeScript database ORMs in 2026:
+gemini --sandbox -p "Compare Prisma vs Drizzle vs Kysely for TypeScript database ORMs:
 - Feature comparison
 - Performance benchmarks
 - Community adoption
@@ -187,20 +186,20 @@ Use Google Search to find Stack Overflow discussions and official Node.js docs."
 ### Best Practices
 
 ```bash
-gemini --sandbox -p "Find current security best practices for JWT authentication in 2026:
+gemini --sandbox -p "Find current security best practices for JWT authentication:
 - Latest OWASP recommendations
 - Token storage best practices
 - Refresh token patterns
 - Common vulnerabilities
 - Security tools
 
-Use Google Search to find official security standards and OWASP Top 10 2026."
+Use Google Search to find official security standards and the latest OWASP Top 10."
 ```
 
 ### Getting Started
 
 ```bash
-gemini --sandbox -p "Find getting started guide for Bun runtime in 2026:
+gemini --sandbox -p "Find the latest getting started guide for Bun runtime:
 - Installation and setup
 - Project structure
 - Core concepts
@@ -255,7 +254,7 @@ gemini --sandbox --include-files api-spec.pdf -p "Extract API information from t
 - Cross-referenced from multiple sources
 
 ```bash
-gemini --sandbox -p "What's the latest version of Next.js in 2026 and what are the new features? Use Google Search."
+gemini --sandbox -p "What's the latest version of Next.js and what are the new features? Use Google Search."
 ```
 
 ### Multimodal Research
@@ -288,7 +287,7 @@ gemini --sandbox --include-directories docs --include-files spec.pdf -p "Analyze
 
 ```bash
 # Phase 1: Overview
-gemini --sandbox -p "Use Google Search: What is the current state of React state management in 2026?"
+gemini --sandbox -p "Use Google Search: What is the current state of React state management?"
 
 # Phase 2: Deep dive (context preserved)
 gemini --sandbox -p "Now search for: Detailed comparison of Zustand vs Jotai vs Valtio"
@@ -304,7 +303,7 @@ gemini --sandbox -p "Find: Best practices for implementing Zustand in large appl
 - Always request Google Search explicitly in prompts
 - Include URLs for all sources
 - Prefer official documentation
-- Verify information is current (2025-2026)
+- Verify information is current (recent sources)
 - Cross-reference multiple sources
 - Note version-specific information
 - Include security considerations
@@ -314,7 +313,7 @@ gemini --sandbox -p "Find: Best practices for implementing Zustand in large appl
 ❌ **DON'T:**
 
 - Make or suggest code changes (use gemini-exec)
-- Trust outdated information (pre-2024)
+- Trust outdated information
 - Rely on single sources
 - Present unverified information
 - Skip source attribution
@@ -355,7 +354,7 @@ After getting search results:
 **Use with caution:**
 
 - Personal blogs (unless from known experts)
-- Old tutorials (pre-2024 for rapidly changing tech)
+- Old tutorials (outdated for rapidly changing tech)
 - Unverified forum posts
 - Content without proper sources
 
@@ -385,7 +384,7 @@ Then sign in with Google account or configure API key from aistudio.google.com/a
 
 **If results are outdated:**
 
-- Explicitly request "2026" or "latest" in query
+- Explicitly request "latest" or "current" in query
 - Use WebFetch to verify official docs
 - Ask for recent comparisons
 
@@ -431,7 +430,7 @@ npm install [package]@latest --dry-run
 1. **Be specific**: "What's the best React state management for large TypeScript apps?" vs "What's good for state?"
 2. **Include context**: "For a Next.js 15 app with TypeScript..."
 3. **Request sources**: "Include official documentation and recent comparisons"
-4. **Specify timeframe**: "Current best practices in 2026"
+4. **Specify timeframe**: "Current best practices"
 5. **Define scope**: "Focus on security best practices"
 6. **Use multimodal**: Attach PDFs/images with `--include-files`
 7. **Explicit search**: "Use Google Search to find..."
@@ -441,7 +440,7 @@ npm install [package]@latest --dry-run
 ### Technology Evaluation
 
 ```bash
-gemini --sandbox -p "Use Google Search to evaluate GraphQL vs REST vs tRPC for TypeScript API in 2026:
+gemini --sandbox -p "Use Google Search to evaluate GraphQL vs REST vs tRPC for TypeScript API:
 - Current adoption trends
 - Performance comparisons
 - Developer experience
@@ -452,7 +451,7 @@ gemini --sandbox -p "Use Google Search to evaluate GraphQL vs REST vs tRPC for T
 ### Migration Planning
 
 ```bash
-gemini --sandbox -p "Use Google Search to find migration guide from Webpack to Vite in 2026:
+gemini --sandbox -p "Use Google Search to find migration guide from Webpack to Vite:
 - Breaking changes
 - Migration steps
 - Common issues and solutions
@@ -474,7 +473,7 @@ gemini --sandbox -p "Use Google Search to find security vulnerabilities in React
 ### Learning
 
 ```bash
-gemini --sandbox -p "Use Google Search to find beginner-friendly Rust tutorial for 2026:
+gemini --sandbox -p "Use Google Search to find beginner-friendly Rust tutorial:
 - Official learning resources
 - Interactive tutorials
 - Project-based learning
@@ -509,7 +508,7 @@ gemini --sandbox --include-files error-screenshot.png -p "Analyze this error scr
 
 ```bash
 # Query 1: Current state
-gemini --sandbox -p "Use Google Search: What is the current recommended approach for SSR in React 2026?"
+gemini --sandbox -p "Use Google Search: What is the current recommended approach for SSR in React?"
 
 # Query 2: Specific implementation (context preserved)
 gemini --sandbox -p "Now search for: Implementation examples for React Server Components"
@@ -532,7 +531,7 @@ Ensure results are version-specific."
 ### Comparison Research
 
 ```bash
-gemini --sandbox -p "Use Google Search for detailed comparison of Astro vs Next.js vs Remix in 2026:
+gemini --sandbox -p "Use Google Search for detailed comparison of Astro vs Next.js vs Remix:
 - Build performance benchmarks
 - Developer experience
 - Ecosystem and plugin support
@@ -545,7 +544,7 @@ Include recent benchmarks and official documentation."
 ### Standards Research
 
 ```bash
-gemini --sandbox -p "Use Google Search to find current OWASP Top 10 2026:
+gemini --sandbox -p "Use Google Search to find the latest OWASP Top 10:
 - Complete list with descriptions
 - Implementation guidelines for each
 - Testing methodologies
@@ -558,7 +557,7 @@ gemini --sandbox -p "Use Google Search to find current OWASP Top 10 2026:
 
 ```bash
 gemini --sandbox --include-files current-implementation.pdf -p "Analyze our current security implementation from this PDF and use Google Search to:
-- Compare with current OWASP Top 10 2026
+- Compare with the latest OWASP Top 10
 - Find gaps in our implementation
 - Search for best practices we're missing
 - Find modern security patterns

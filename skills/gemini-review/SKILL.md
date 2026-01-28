@@ -127,7 +127,7 @@ gemini --sandbox -p "Security-focused review of git diff:
 - Session management issues
 - OWASP Top 10 risks
 
-Use Google Search to verify against current OWASP 2026 recommendations."
+Use Google Search to verify against current OWASP recommendations."
 ```
 
 **Performance review:**
@@ -309,7 +309,7 @@ gemini --sandbox --include-files design.pdf,mockup-1.png,mockup-2.png -p "Review
 Verify against current standards:
 
 ```bash
-gemini --sandbox -p "Review authentication implementation. Use Google Search to verify it follows current OWASP 2026 authentication security standards."
+gemini --sandbox -p "Review authentication implementation. Use Google Search to verify it follows current OWASP authentication security standards."
 ```
 
 ### Multimodal Review

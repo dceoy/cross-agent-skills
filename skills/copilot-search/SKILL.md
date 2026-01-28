@@ -69,8 +69,8 @@ Use Read, Grep, Glob to understand existing patterns.
 Use the **WebSearch** tool for broad research:
 
 ```
-Query: "[TOPIC] latest documentation 2026"
-Query: "best practices for [TECHNOLOGY] security 2026"
+Query: "[TOPIC] latest documentation"
+Query: "best practices for [TECHNOLOGY] security"
 Query: "[ERROR_MESSAGE] solution [FRAMEWORK] [VERSION]"
 ```
 
@@ -78,17 +78,17 @@ Query: "[ERROR_MESSAGE] solution [FRAMEWORK] [VERSION]"
 
 - Be specific about what you're looking for
 - Include version numbers if known
-- Specify "latest" or "2026" for current info
+- Specify "latest" or "current" for current info
 - Request official sources when possible
 - Include framework/language context
 
 **Example queries:**
 
 ```
-"Next.js 15 authentication best practices 2026"
+"Next.js 15 authentication best practices"
 "React useEffect cleanup function official documentation"
 "TypeScript generic constraints examples"
-"Python async/await security vulnerabilities 2026"
+"Python async/await security vulnerabilities"
 ```
 
 ### Step 4: Fetch and Verify Sources
@@ -203,7 +203,7 @@ Last verified: [Current date]
 ### Documentation Lookup
 
 ```
-WebSearch query: "React hooks official documentation 2026"
+WebSearch query: "React hooks official documentation"
 WebFetch URL: https://react.dev/reference/react
 Prompt: "Extract useState, useEffect, useContext documentation with examples"
 ```
@@ -211,7 +211,7 @@ Prompt: "Extract useState, useEffect, useContext documentation with examples"
 ### Library Comparison
 
 ```
-WebSearch query: "Prisma vs TypeORM vs Drizzle comparison TypeScript 2026"
+WebSearch query: "Prisma vs TypeORM vs Drizzle comparison TypeScript"
 WebFetch: Official docs for each library
 Create comparison table from findings
 ```
@@ -219,7 +219,7 @@ Create comparison table from findings
 ### Error Resolution
 
 ```
-WebSearch query: "ECONNREFUSED Node.js solution 2026"
+WebSearch query: "ECONNREFUSED Node.js solution"
 WebSearch query: "ECONNREFUSED common causes troubleshooting"
 Verify solutions from multiple sources
 ```
@@ -227,7 +227,7 @@ Verify solutions from multiple sources
 ### Best Practices
 
 ```
-WebSearch query: "JWT authentication security best practices OWASP 2026"
+WebSearch query: "JWT authentication security best practices OWASP"
 WebFetch: https://owasp.org (if applicable)
 WebFetch: Official framework security docs
 ```
@@ -235,7 +235,7 @@ WebFetch: Official framework security docs
 ### Getting Started
 
 ```
-WebSearch query: "Next.js 15 getting started tutorial 2026"
+WebSearch query: "Next.js 15 getting started tutorial"
 WebFetch: https://nextjs.org/learn
 Extract setup, core concepts, first app tutorial
 ```
@@ -248,7 +248,7 @@ Extract setup, core concepts, first app tutorial
 - Use WebFetch to verify official sources
 - Include URLs for all sources
 - Prefer official documentation over blog posts
-- Verify information is current (2025-2026)
+- Verify information is current (recent sources)
 - Cross-reference multiple sources
 - Note when information is version-specific
 - Include security considerations
@@ -257,7 +257,7 @@ Extract setup, core concepts, first app tutorial
 ❌ **DON'T:**
 
 - Make or suggest code changes (use copilot-exec for that)
-- Trust outdated information (pre-2024 for fast-moving tech)
+- Trust outdated information for fast-moving tech
 - Rely on single sources
 - Present unverified information
 - Skip source attribution
@@ -286,7 +286,7 @@ Extract setup, core concepts, first app tutorial
 **Use with caution:**
 
 - Personal blogs (unless from known experts)
-- Old tutorials (pre-2024)
+- Old tutorials (outdated)
 - Unverified forum posts
 
 ## Error Handling
@@ -300,7 +300,7 @@ Extract setup, core concepts, first app tutorial
 
 **If results are outdated:**
 
-- Explicitly request "2026" or "latest" in query
+- Explicitly request "latest" or "current" in query
 - Use WebFetch to check official docs directly
 - Ask for recent comparisons
 
@@ -348,7 +348,7 @@ npm install [package]@latest --dry-run
 Research before choosing a library or framework:
 
 ```
-WebSearch query: "GraphQL vs REST vs tRPC TypeScript API comparison 2026"
+WebSearch query: "GraphQL vs REST vs tRPC TypeScript API comparison"
 ```
 
 ### Migration Planning
@@ -365,7 +365,7 @@ WebFetch: Official Vue migration documentation
 Find vulnerabilities and best practices:
 
 ```
-WebSearch query: "express 4.18 security vulnerabilities CVE 2026"
+WebSearch query: "express 4.18 security vulnerabilities CVEs"
 WebFetch: GitHub Security Advisories
 WebFetch: npm security advisories
 ```
@@ -375,7 +375,7 @@ WebFetch: npm security advisories
 Get tutorials and learning resources:
 
 ```
-WebSearch query: "TypeScript beginner tutorial 2026 official"
+WebSearch query: "TypeScript beginner tutorial official"
 WebFetch: https://www.typescriptlang.org/docs/handbook/
 ```
 
@@ -396,7 +396,7 @@ For complex research, break into focused queries:
 
 ```
 # Query 1: Current state
-WebSearch: "current best practice for SSR in React 2026"
+WebSearch: "current best practice for SSR in React"
 
 # Query 2: Specific implementation
 WebFetch: Official React Server Components documentation
@@ -416,7 +416,7 @@ Compare with current project TypeScript version
 ### Comparison Research
 
 ```
-WebSearch: "Vite vs webpack vs Turbopack 2026 benchmarks"
+WebSearch: "Vite vs webpack vs Turbopack benchmarks"
 WebFetch: Official documentation for each tool
 Create comparison table with pros/cons
 ```
@@ -457,7 +457,7 @@ Do NOT make changes - analysis only.
 1. **Be specific**: "What's the best React state management library for large apps?" vs "What's good for state?"
 2. **Include context**: "For a Next.js 15 app with TypeScript..."
 3. **Request sources**: "Include official documentation and recent comparisons"
-4. **Specify timeframe**: "Current best practices in 2026"
+4. **Specify timeframe**: "Current best practices"
 5. **Define scope**: "Focus on security best practices"
 
 ---
